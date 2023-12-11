@@ -49,7 +49,7 @@
         "workbench.tree.renderIndentGuides":"always",
         "workbench.tree.indent":6,
         "editor.formatOnType":false,
-        "editor.formatOnSave":true,
+        "editor.formatOnSave":false,
         "editor.formatOnPaste":true,
         "[markdown]":{
            "editor.defaultFormatter":"bierner.markdown-preview-github-styles"
