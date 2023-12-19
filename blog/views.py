@@ -1,15 +1,17 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
-    paginate_by = 2
+    paginate_by = 3
 
 class PostDetail(View):
 
@@ -76,6 +78,31 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+class AddPost(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
+    """This view is used to allow logged in users to create a recipe"""
+    form_class = PostForm
+    template_name = 'add_post.html'
+    success_message = "%(calculated_field)s was created successfully"
+
+    def form_valid(self, form):
+        """
+        This method is called when valid form data has been posted.
+        The signed in user is set as the author of the recipe.
+        """
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def get_success_message(self, cleaned_data):
+        """
+        This function overrides the get_success_message() method to add
+        the recipe title into the success message.
+        source: https://docs.djangoproject.com/en/4.0/ref/contrib/messages/
+        """
+        return self.success_message % dict(
+            cleaned_data,
+            calculated_field=self.object.title,
+        )
 
 
 
