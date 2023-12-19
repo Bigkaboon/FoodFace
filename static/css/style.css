@@ -22,7 +22,7 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #FF3632;
 }
 
 .main-bg {
@@ -43,7 +43,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: #FF9A98;
 }
 
 .author {
@@ -139,4 +139,13 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+.light-red {
+    background-color: #FF9A98;
+}
+
+.center-div {
+    margin-right: auto;
+    margin-left: auto;
 }
