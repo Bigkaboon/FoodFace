@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row g-0">
       <div class="col-md-6 masthead-text">
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated and post.author == user %}
         <span>
             <a href="{% url 'update_post' post.slug %}" class="btn-like" style="text-decoration: none; margin-left: 1rem;"><i class="fa-solid fa-trash"></i><strong> Delete Post </strong></a>
             <a href="{% url 'update_post' post.slug %}" class="btn-like" style="text-decoration: none; margin-left: 1rem;"><strong>Edit Post   </strong><i class="fas fa-edit"></i></a>
@@ -84,6 +84,10 @@
         <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
         {% for comment in comments %}
         <div class="comments" style="padding: 10px">
+            {% if user.is_authenticated %}
+            <button type="button"><a href="{% url 'update_comment' comment.id %}">Edit</a></button>
+            <button type="button"><a href="{% url 'delete_comment' comment.id %}">Delete</a></button>
+            {% endif %}
           <p class="font-weight-bold">
             <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
             {{ comment.name }}
@@ -97,6 +101,7 @@
           {{ comment.body | linebreaks }}
         </div>
         <!-- Our for loop ends here -->
+        
         {% endfor %}
       </div>
     </div>

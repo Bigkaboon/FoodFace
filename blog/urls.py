@@ -13,4 +13,12 @@ urlpatterns = [
         '<slug:slug>/delete/',
         views.DeletePost.as_view(), name='delete_post'
         ),
+    path(
+        'comments/<int:pk>/update/',
+        views.UpdateComment.as_view(), name='update_comment'
+        ),
+    path(
+        'comments/<int:pk>/delete/',
+        views.DeleteComment.as_view(), name='delete_comment'
+        ),
 ]
