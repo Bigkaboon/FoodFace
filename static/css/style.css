@@ -149,3 +149,17 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
+
+.white-text {
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+.navbar-light .navbar-text {
+    color: white;
+}
+
+.footer-color {
+    background-color: #FF3632;
+}
