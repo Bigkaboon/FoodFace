@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.template.defaultfilters import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
@@ -16,7 +17,7 @@ class PostList(generic.ListView):
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
+        queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
@@ -91,6 +92,7 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
         The signed in user is set as the author of the recipe.
         """
         form.instance.author = self.request.user
+        form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
     def get_success_message(self, cleaned_data):
@@ -104,5 +106,42 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
             calculated_field=self.object.title,
         )
 
+class UpdatePost(
+        LoginRequiredMixin, UserPassesTestMixin,
+        SuccessMessageMixin, generic.UpdateView
+        ):
 
+    """
+    This view is used to allow logged in users to edit their own recipes
+    """
+    model = Post
+    form_class = PostForm
+    template_name = 'update_post.html'
+    success_message = "%(calculated_field)s was edited successfully"
+
+    def form_valid(self, form):
+        """
+        This method is called when valid form data has been posted.
+        The signed in user is set as the author of the recipe.
+        """
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
+    def test_func(self):
+        """
+        Prevent another user from updating other's recipes
+        """
+        post = self.get_object()
+        return post.author == self.request.user
+
+    def get_success_message(self, cleaned_data):
+        """
+        Override the get_success_message() method to add the recipe title
+        into the success message.
+        source: https://docs.djangoproject.com/en/4.0/ref/contrib/messages/
+        """
+        return self.success_message % dict(
+            cleaned_data,
+            calculated_field=self.object.title,
+        )
 

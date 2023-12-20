@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <h1 class="page-title">Update Recipe</h1>
+    <hr class="home-break">
+    <br>
+    <div class="row justify-content-center ">
+        {% if user.is_authenticated and post.author == user %}
+        <!-- Checks the user is signed in and the recipe they're trying to access is owned by them -->
+        {% load cloudinary %}
+        <div class="col-11 col-md-8 col-lg-6 mt-3 add-recipe-outer">
+            <form method="post" class="add-recipe mb-5" enctype="multipart/form-data">
+                {{ form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-dark">Update</button>
+                <a class="btn btn-outline-dark m-2" href="{%  url 'post_detail' post.slug  %}">Cancel</a>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{%endblock%}
