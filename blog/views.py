@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.template.defaultfilters import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
+from django.contrib import messages
 from .models import Post
 from .forms import CommentForm, PostForm
 
@@ -145,3 +147,23 @@ class UpdatePost(
             calculated_field=self.object.title,
         )
 
+class DeletePost(
+        LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+    """
+    This view is used to allow logged in users to delete their own recipes
+    """
+    model = Post
+    template_name = 'delete_post.html'
+    success_message = "Post deleted successfully"
+    success_url = reverse_lazy('home')
+
+    def test_func(self):
+        """
+        Prevent another user from deleting other's recipes
+        """
+        post = self.get_object()
+        return post.author == self.request.user
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeletePost, self).delete(request, *args, **kwargs)

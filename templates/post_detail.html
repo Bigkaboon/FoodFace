@@ -7,6 +7,7 @@
       <div class="col-md-6 masthead-text">
         {% if user.is_authenticated %}
         <span>
+            <a href="{% url 'update_post' post.slug %}" class="btn-like" style="text-decoration: none; margin-left: 1rem;"><i class="fa-solid fa-trash"></i><strong> Delete Post </strong></a>
             <a href="{% url 'update_post' post.slug %}" class="btn-like" style="text-decoration: none; margin-left: 1rem;"><strong>Edit Post   </strong><i class="fas fa-edit"></i></a>
         </span>
         {% endif %}
