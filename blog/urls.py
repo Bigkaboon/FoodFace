@@ -2,7 +2,7 @@ from blog import views
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import profile
+from .views import profile, update_profile
 
 
 urlpatterns = [
@@ -24,5 +24,6 @@ urlpatterns = [
         views.DeleteComment.as_view(), name='delete_comment'
         ),
     path('profile/<str:username>/', profile, name='profile'),
+    path('profile/<str:username>/edit/', update_profile, name='update_profile'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

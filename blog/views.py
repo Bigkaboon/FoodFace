@@ -1,14 +1,16 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.template.defaultfilters import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import FormView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib import messages
 from .models import Post, Comment, Profile
-from .forms import CommentForm, PostForm
+from .forms import CommentForm, PostForm, ProfileForm
 
 
 
@@ -52,9 +54,9 @@ class PostDetail(View):
         comment_form = CommentForm(data=request.POST)
         
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
-            comment:form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
+            comment.email = request.user.email
+            comment.name = request.user.username
             comment.post = post
             comment.save()
             
@@ -238,3 +240,31 @@ def profile(request, username):
     user = get_object_or_404(User, username=username)
     profile = get_object_or_404(Profile, user=user)
     return render(request, 'profile.html', {'user': user, 'profile': profile})
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid:
+            form.save()
+        else:
+            form = ProfileForm(instance=profile)
+
+        return render(request, 'profile.html', {'user': user, 'profile': profile, 'form': form})
+
+@login_required
+def update_profile(request, username):
+    
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Profile, user=user)
+
+    if request.user == user:
+        if request.method == 'POST':
+            form = ProfileForm(request.POST, request.FILES, instance=profile)
+            if form.is_valid:
+                form.save()
+                return redirect('profile', username=username)
+        
+        else:
+            form = ProfileForm(instance=profile)
+        
+        return render(request, 'update_profile.html', {'form': form})
+    return redirect('home')

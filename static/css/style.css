@@ -146,9 +146,23 @@ body {
 }
 
 .center-div {
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
 }
+.center-profile {
+    display: grid;
+    place-items: center;
+    justify-content: baseline;
+}
+
+.profile-pic {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid #cddc39;
+    filter: drop-shadow(0 0 5px #FF3632);
+}
+
 
 .white-text {
     color: white;
