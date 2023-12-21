@@ -4,9 +4,10 @@ from django.http import HttpResponseRedirect
 from django.template.defaultfilters import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.contrib import messages
-from .models import Post, Comment
+from .models import Post, Comment, Profile
 from .forms import CommentForm, PostForm
 
 
@@ -231,3 +232,9 @@ class DeleteComment(
         """ Return to recipe detail view when comment deleted sucessfully"""
         post = self.object.post
         return reverse_lazy('post_detail', kwargs={'slug': post.slug})
+
+
+def profile(request, username):
+    user = User.objects.get(username=username)
+    profile = Profile.objects.get(user=user)
+    return render(request, 'profile.html', {'user': user, 'profile': profile})
