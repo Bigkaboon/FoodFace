@@ -11,6 +11,7 @@ from .models import Post, Comment, Profile
 from .forms import CommentForm, PostForm
 
 
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -233,8 +234,7 @@ class DeleteComment(
         post = self.object.post
         return reverse_lazy('post_detail', kwargs={'slug': post.slug})
 
-
 def profile(request, username):
-    user = User.objects.get(username=username)
-    profile = Profile.objects.get(user=user)
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Profile, user=user)
     return render(request, 'profile.html', {'user': user, 'profile': profile})
