@@ -166,13 +166,9 @@ body {
 
 .edit-profile-btn {
     background-color: #FF9A98;
-    border: none;
-    border-radius: 10%;
-
-}
-
-.edit-profile-btn:hover {
-    border: 1px solid #FF3632;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
 }
 
 button>a {
@@ -197,7 +193,7 @@ h5 {
     max-width: 60vw;
     text-align: center;
     min-height: 15vh;
-    border-radius: 5%;
+    border-radius: 30px;
 }
 
 .bio-bg>p {
@@ -228,6 +224,36 @@ h5 {
     color: white;
 }
 
+.profile-bg{
+    background-color: #FF3632;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    border-radius: 30px;
+    min-width: 80vw;
+    max-width: 85vw;
+    max-height: 70vh;
+}
+
+.comment-btns {
+    background-color: #FF9A98;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.comment-bg {
+    background-color: rgba(255, 154, 152, 0.4);
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+.comment-text-bg {
+    background-color: rgba(255, 154, 152, 0.6);
+    border-radius: 5px;
+    min-height: 2rem;
+    padding: 0.5rem;
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: white;
 }
@@ -240,4 +266,58 @@ h5 {
     background-color: #FF3632;
 }
 
-@media screen and (min-width: 390px) {}
+@media screen and (min-width: 390px) {
+    #post-feed {
+        min-height: 90vh;
+    }
+
+    .enlarge {
+        min-width: 50vw;
+        min-height: 20vh;
+    }
+
+}
+
+@media screen and (min-width: 768px){
+    .enlarge {
+        min-width: 10vw;
+        min-height: 20vh;
+    }
+    .bio-bg {
+        min-width: 20vw;
+        max-width: 40vw;
+        text-align: center;
+        min-height: 15vh;
+        border-radius: 15px;
+    }
+    
+    .bio-bg>p {
+        font-weight: 500;
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        max-width: fit-content;
+    }
+    .profile-bg{
+        background-color: #FF3632;
+        margin-top: 2rem;
+        max-width: 60vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        border-radius: 30px;
+    }
+
+    .edit-profile-btn {
+        background-color: #FF9A98;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+        
+    
+    }
+    
+    .edit-profile-btn:hover {
+        border: 2px solid white;
+    }
+}
