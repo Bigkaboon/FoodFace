@@ -1,10 +1,14 @@
 {% extends "base.html" %} {% block content %}
 <div id="feed-bg"></div>
-<div id="post-feed" class="container-fluid">
+<div
+  id="post-feed"
+  class="container-fluid"
+  style="background-color: rgba(255, 154, 152, 0.2)"
+>
   <div class="row">
     <!-- Blog Entries Column -->
     <div class="col-12 mt-3">
-        {% for post in post_list %}
+      {% for post in post_list %}
       <div class="row">
         <div class="col-md-4 center-div">
           <div class="card mb-4">
@@ -31,7 +35,8 @@
               </a>
               <hr />
               <p class="card-text text-muted h6">
-                {{ post.created_on}} <i class="far fa-heart"></i> {{ post.number_of_likes }}
+                {{ post.created_on}}
+                <i class="far fa-heart"></i> {{post.number_of_likes }}
               </p>
             </div>
           </div>

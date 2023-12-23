@@ -149,6 +149,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 .center-profile {
     display: grid;
     place-items: center;
@@ -163,13 +164,74 @@ body {
     filter: drop-shadow(0 0 5px #FF3632);
 }
 
+.edit-profile-btn {
+    background-color: #FF9A98;
+    border: none;
+    border-radius: 10%;
+
+}
+
+.edit-profile-btn:hover {
+    border: 1px solid #FF3632;
+}
+
+button>a {
+    text-decoration: none;
+    color: white;
+}
+
+button>a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+h5 {
+    margin: 1rem;
+}
+
+.bio-bg {
+    background-color: rgba(255, 154, 152, 0.6);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    min-width: 40vw;
+    max-width: 60vw;
+    text-align: center;
+    min-height: 15vh;
+    border-radius: 5%;
+}
+
+.bio-bg>p {
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    max-width: fit-content;
+}
+
+.profile-username {
+    margin: 1rem;
+    text-decoration: underline;
+}
+
+.add-post-head {
+    text-align: center;
+}
+
+.btn-submit {
+    background-color: #FF3632;
+    border: none;
+    border-radius: 10%;
+    margin-top: 0.5rem;
+}
 
 .white-text {
     color: white;
 }
+
 .navbar-light .navbar-nav .nav-link {
     color: white;
 }
+
 .navbar-light .navbar-text {
     color: white;
 }
@@ -177,3 +239,5 @@ body {
 .footer-color {
     background-color: #FF3632;
 }
+
+@media screen and (min-width: 390px) {}
