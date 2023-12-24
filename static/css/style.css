@@ -8,6 +8,15 @@ body {
     font-weight: 700;
     color: #4A4A4F;
 }
+form > button {
+    background-color: #fff;
+    color: black;
+    border: 1px solid #FF3632;
+    border-radius: 5px;
+}
+p > input {
+    border-radius: 5px;
+}
 
 .red-o {
     color: #E84610;
@@ -25,9 +34,41 @@ body {
     background-color: #FF3632;
 }
 
-.main-bg {
-    background-color: #F9FAFC;
+#signup-bg {
+    background-color: #FF9A98;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80vw;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 15px;
 }
+
+#login-bg {
+    background-color: whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80vw;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 0.75rem solid #FF9A98;
+}
+
+#signout-bg {
+    background-color: whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80vw;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 0.75rem solid #FF9A98;
+    margin-top: 8rem;
+}
+
+
+
 
 .card {
     border: none;
@@ -164,7 +205,7 @@ body {
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    border: 2px solid #cddc39;
+    border: 2px solid white;
     filter: drop-shadow(0 0 5px #FF3632);
 }
 
@@ -222,6 +263,8 @@ h5 {
     border: none;
     border-radius: 10%;
     margin-top: 0.5rem;
+    margin-left: 2rem;
+    
 }
 
 .white-text {
@@ -265,6 +308,10 @@ h5 {
     margin-top: 0.5rem;
 }
 
+.add-post-bg {
+    background-color: #ff9a89
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: white;
 }
@@ -276,6 +323,44 @@ h5 {
 .footer-color {
     background-color: #FF3632;
 }
+#div_id_title {
+    max-width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+#div_id_content {
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div_id_excerpt {
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div_id_featured_image {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70vw;
+}
+.main-bg > .container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+#updt-post-bg {
+    background-color: #FF9A98;
+    padding-top: 1rem;
+}
+
+.btn-updt-post{
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
 
 @media screen and (min-width: 390px) {
     #post-feed {
@@ -286,6 +371,35 @@ h5 {
         min-width: 50vw;
         min-height: 20vh;
     }
+    .add-post-bg {
+        min-width: 100vw;
+        min-height: 87vh;
+    }
+    
+    .btn-submit {
+        margin-left: 0;
+    }
+
+    .main-bg {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #signout-bg {
+        max-width: 60vw;
+        margin-top: 12rem;
+    }
+
+    #updt-post-bg {
+        max-width: 80vw;
+        margin-top: 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+    }
+    .btn-updt-post {
+        margin-left: 0;
+    }
+    
 
 }
 
@@ -338,5 +452,17 @@ h5 {
 
     .comment-btns:hover {
         border: 1px solid white;
+    }
+    #login-bg {
+        max-width: 50vw;
+        margin-top: 5rem;
+    }
+
+    #signout-bg {
+        max-width: 30vw;
+    }
+    
+    #updt-post-bg {
+        max-width: 70vw;
     }
 }

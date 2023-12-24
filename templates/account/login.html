@@ -7,14 +7,14 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container" id="login-bg">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
+            <p>{% blocktrans %}Welcome back to FoodFace recipie plattform. To post, comment or like a post, please log in. If
                 you
-                have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
+                have not created an account yet, then <a class="link" href="{{ signup_url }}" style="color: #FF3632;">sign up</a>
                 first.{% endblocktrans %}</p>
         </div>
     </div>
