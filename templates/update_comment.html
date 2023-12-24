@@ -3,7 +3,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="container">
+<div class="container edit-comment-bg">
     <h1 class="page-title">Edit Comment</h1>
     <hr class="home-break">
     <br>
@@ -15,8 +15,8 @@
                 {{ form | crispy }}
                 {% csrf_token %}
                 <div class="text-center">
-                    <button type="submit" class="btn btn-outline-dark">Update</button>
-                    <a class="btn btn-outline-dark m-2"
+                    <button type="submit" style="background-color: whitesmoke;" class="btn btn-outline-dark">Update</button>
+                    <a style="background-color: whitesmoke;" class="btn btn-outline-dark m-2"
                         href="{%  url 'post_detail' comment.post.slug  %}">Cancel</a>
                 </div>
             </form>
