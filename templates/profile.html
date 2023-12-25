@@ -14,9 +14,9 @@
   </div>
 
   {% if user.is_authenticated %}
-  <button type="button" class="edit-profile-btn">
-    <a href="{% url 'update_profile' username=user.username %}">Edit Profile</a>
-  </button>
+  
+    <a href="{% url 'update_profile' username=user.username %}" class="edit-profile-btn" style="text-decoration: none;color: white;">Edit Profile</a>
+  
   {% endif %}
 </div>
 {% endblock %}

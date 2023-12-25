@@ -7,8 +7,8 @@
       <div class="col-md-6 masthead-text">
         {% if user.is_authenticated and post.author == user %}
         <span class="post-edit-delete">
-            <button type="button" class="comment-btns" style="background-color: white;"><a href="{% url 'update_post' post.slug %}" style="color: #E84610;">Edit</i></a></button>
-            <button type="button" class="comment-btns" style="background-color: white;"><a href="{% url 'delete_post' post.slug %}" style="color: #E84610;">Delete</a></button>
+            <a href="{% url 'update_post' post.slug %}" class="comment-btns" style="color: #E84610;background-color: white;text-decoration: none;">Edit</a>
+            <a href="{% url 'delete_post' post.slug %}" class="comment-btns" style="color: #E84610;background-color: white;text-decoration: none;">Delete</a>
         </span>
         {% endif %}
         <!-- Post title goes in these h1 tags -->
@@ -20,11 +20,9 @@
         <!-- The featured image URL goes in the src attribute -->
         {% if "placeholder" in post.featured_image.url %}
         <img
-          src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
-          width="100%"
-        />
+          src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" class="img-width" alt="default post image"/>
         {% else %}
-        <img src=" {{ post.featured_image.url }}" width="100%" />
+        <img class="img-width" src=" {{ post.featured_image.url }}" alt="Post image"/>
         {% endif %}
       </div>
     </div>
@@ -40,24 +38,24 @@
         <div class="row">
           <div class="col-1">
             <!-- The number of likes goes before the closing strong tag -->
-            <strong>
-                {% if user.is_authenticated %}
-                <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                    {% csrf_token %}
-                    {% if liked %}
-                        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i 
-                            class="fas fa-heart"></i></button>
-                    {% else %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                class="far fa-heart"></i></button>
-                    {% endif %}
-                </form>
+            
+            {% if user.is_authenticated %}
+            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                {% csrf_token %}
+                {% if liked %}
+                    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i 
+                        class="fas fa-heart"></i></button>
+                {% else %}
+                        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                            class="far fa-heart"></i></button>
+                {% endif %}
+            </form>
                 {% else %}
                 
                 <span class="text-secoundary"><i class="far fa-heart"></i></span>
                 {% endif %}
                 <span class="text-secoundary">{{ post.number_of_likes }}</span>
-            </strong>
+            
           </div>
           <div class="col-1">
             {% with comments.count as total_comments %}
@@ -85,8 +83,8 @@
         {% for comment in comments %}
         <div class="comments comment-bg" style="padding: 10px">
             {% if user.is_authenticated and user.username == comment.name %}
-            <button type="button" class="comment-btns"><a href="{% url 'update_comment' comment.id %}">Edit</i></a></button>
-            <button type="button" class="comment-btns"><a href="{% url 'delete_comment' comment.id %}">Delete</a></button>
+            <a href="{% url 'update_comment' comment.id %}" class="comment-btns" style="text-decoration: none;color: white;">Edit</a>
+            <a href="{% url 'delete_comment' comment.id %}" class="comment-btns" style="text-decoration: none;color: white;">Delete</a>
             {% endif %}
           <p class="font-weight-bold">
             <!-- The commenter's name goes here. Check the model if you're not sure what that is -->

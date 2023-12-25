@@ -16,7 +16,10 @@
                 {{ form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn-updt-post">Update</button>
-                <button type="button" class="btn-updt-post"><a href="{%  url 'post_detail' post.slug  %}" style="color: black;">Cancel</a></button>
+                <a href="{%  url 'post_detail' post.slug  %}" class="btn-updt-post" 
+                style="color: black; background-color: white;
+                border-radius: 5px; border: 1px solid #FF3632;
+                text-decoration: none;">Cancel</a>
             </form>
         </div>
         {% endif %}
