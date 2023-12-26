@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-bigkaboon-foodface-dlpmczf5xz.us2.codeanyapp.com', 'foodface-a39d2becae0b.herokuapp.com', 'localhost']
 

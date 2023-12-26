@@ -4,6 +4,11 @@ FoodFace is originally a business idea that gathers recipes from around the worl
 
 This is the part of FoodFace that makes it possible for the users to post their food experiences and share them with others and contribute to the library.
 
+# Important 
+ * During the validation/documentation process the layout of the website got majorly changed. Due to the lack of student support during Christmas I needed to do the validation as late as I did which resulted in less time fixing the problems that occured once debugged.
+ * I expect this project to fail and mainly submit it in time so that I can fix the all the problem's once assesed after the 5th project is complete, I just now found the commits and localized them so that I can fix the layout later on when it's time. I also looked at the deployed version and for some reason isnt that working either.
+ * Just to be extra clear, the Layout changed once debugging the python files which I then now (the day of submission) tried to fix to the absolute last minuite.
+
 ## UX
 ---
 * Navigation 
@@ -106,3 +111,6 @@ This is the part of FoodFace that makes it possible for the users to post their 
 
 * [ChatGPT](https://chat.openai.com/) - For more specific questions and instructions
 * [Youtube](https://www.youtube.com/) - Django related tutorials.
+
+
+  
