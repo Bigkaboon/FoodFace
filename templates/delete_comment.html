@@ -2,7 +2,7 @@
 {% block title %} FoodFace | Delete Comment{% endblock %}
 {% block content %}
 
-<div class="container delete-view">
+<div class="container">
     <h1 class="page-title">Delete Comment</h1>
     <hr class="home-break">
     <br>
@@ -12,7 +12,7 @@
             <!-- Delete Comment Form -->
             <form class="text-center" method="POST">
                 {% csrf_token %}
-                <div class="delete-btns">
+                <div>
                     <button class="btn btn-danger m-2" type="submit">Delete</button>
                     <a class="btn btn-outline-dark m-2"
                         href="{%  url 'post_detail' comment.post.slug  %}">Cancel</a>

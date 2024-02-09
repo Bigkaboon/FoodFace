@@ -8,14 +8,12 @@ body {
     font-weight: 700;
     color: #4A4A4F;
 }
-
 form > button {
     background-color: #fff;
     color: black;
     border: 1px solid #FF3632;
     border-radius: 5px;
 }
-
 p > input {
     border-radius: 5px;
 }
@@ -68,6 +66,9 @@ p > input {
     border: 0.75rem solid #FF9A98;
     margin-top: 8rem;
 }
+
+
+
 
 .card {
     border: none;
@@ -196,7 +197,6 @@ p > input {
     place-items: center;
     justify-content: baseline;
 }
-
 .masthead-text {
     background-color: #ff8686;
 }
@@ -294,14 +294,12 @@ h5 {
     margin-bottom: 1rem;
     border-radius: 5px;
 }
-
 .comment-text-bg {
     background-color: rgba(255, 154, 152, 0.6);
     border-radius: 5px;
     min-height: 2rem;
     padding: 0.5rem;
 }
-
 .post-edit-delete {
     display: flex;
     justify-content: space-between;
@@ -325,7 +323,6 @@ h5 {
 .footer-color {
     background-color: #FF3632;
 }
-
 #div_id_title {
     max-width: 30vw;
     margin-left: auto;
@@ -349,7 +346,6 @@ h5 {
     margin-right: auto;
     max-width: 70vw;
 }
-
 .main-bg > .container {
     background-color: white;
     border-radius: 15px;
@@ -366,6 +362,7 @@ h5 {
     margin-left: 2rem;
 }
 
+<<<<<<< HEAD
 .edit-profile-bg {
     margin-left: auto;
     margin-right: auto;
@@ -425,6 +422,8 @@ h5 {
 }
 
 
+=======
+>>>>>>> parent of 98c22e3 (styled the rest of the templates)
 @media screen and (min-width: 390px) {
     #post-feed {
         min-height: 90vh;
@@ -434,7 +433,6 @@ h5 {
         min-width: 50vw;
         min-height: 20vh;
     }
-
     .add-post-bg {
         min-width: 100vw;
         min-height: 87vh;
@@ -460,11 +458,11 @@ h5 {
         border-radius: 15px;
         margin-bottom: 2rem;
     }
-
     .btn-updt-post {
         margin-left: 0;
     }
     
+<<<<<<< HEAD
     .edit-profile-bg {
         min-width: 40vw;
     }
@@ -495,6 +493,8 @@ h5 {
         max-width: 40vw;
     }
 
+=======
+>>>>>>> parent of 98c22e3 (styled the rest of the templates)
 
 }
 
@@ -503,7 +503,6 @@ h5 {
         min-width: 10vw;
         min-height: 20vh;
     }
-
     .bio-bg {
         min-width: 20vw;
         max-width: 40vw;
@@ -519,7 +518,6 @@ h5 {
         margin-right: 0.5rem;
         max-width: fit-content;
     }
-
     .profile-bg{
         background-color: #FF3632;
         margin-top: 2rem;
@@ -550,7 +548,6 @@ h5 {
     .comment-btns:hover {
         border: 1px solid white;
     }
-
     #login-bg {
         max-width: 50vw;
         margin-top: 5rem;
@@ -563,6 +560,7 @@ h5 {
     #updt-post-bg {
         max-width: 70vw;
     }
+<<<<<<< HEAD
 
     .edit-profile-bg {
         min-width: 40vw;
@@ -591,4 +589,6 @@ h5 {
     .info-text {
         max-width: 35vw;
     }
+=======
+>>>>>>> parent of 98c22e3 (styled the rest of the templates)
 }
