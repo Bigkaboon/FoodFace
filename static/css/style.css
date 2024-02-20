@@ -84,7 +84,7 @@ p > input {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #FF9A98;
+    background: linear-gradient(to left, #FF9A98, #FF3632);
 }
 
 .author {
@@ -290,12 +290,12 @@ h5 {
 }
 
 .comment-bg {
-    background-color: rgba(255, 154, 152, 0.4);
+    background: linear-gradient(to right, #FF9A98, whitesmoke);
     margin-bottom: 1rem;
     border-radius: 5px;
 }
 .comment-text-bg {
-    background-color: rgba(255, 154, 152, 0.6);
+    background: linear-gradient(to right, #FF9A98, whitesmoke);
     border-radius: 5px;
     min-height: 2rem;
     padding: 0.5rem;
@@ -321,8 +321,9 @@ h5 {
 }
 
 .footer-color {
-    background-color: #FF3632;
+    background: #FF3632;
 }
+
 #div_id_title {
     max-width: 30vw;
     margin-left: auto;
@@ -589,6 +590,8 @@ h5 {
     .info-text {
         max-width: 35vw;
     }
+
+    
 =======
 >>>>>>> parent of 98c22e3 (styled the rest of the templates)
 }
