@@ -29,10 +29,8 @@ urlpatterns = [
     path(
         'profile/<str:username>/edit/', update_profile, name = 'update_profile'
         ),
-<<<<<<< HEAD
+
     path('profile/<str:username>/', profile, name='profile'),
     path('profile/<str:username>/edit/', update_profile, name='update_profile'),
-=======
->>>>>>> f50a7bf00652cfc60b0b80a1866381e90a600b43
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
