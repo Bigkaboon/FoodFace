@@ -13,8 +13,9 @@
         {% endif %}
         <!-- Post title goes in these h1 tags -->
         <h1 class="post-title">{{ post.title }}</h1>
+        <!-- <a class="nav-link" href="{% url 'profile' username=user.username %}">{{ user.username }}</a> -->
         <!-- Post author goes before the | the post's created date goes after -->
-        <p class="post-subtitle white-text">{{ post.author }} | {{ post.created_on }}</p>
+        <p class="post-subtitle white-text"><a class="profile-link" href="{% url 'profile' username=post.author %}">@{{ post.author }}</a> | {{ post.created_on }}</p>
       </div>
       <div class="d-none d-md-block col-md-6 masthead-image">
         <!-- The featured image URL goes in the src attribute -->

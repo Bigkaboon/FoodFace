@@ -16,7 +16,7 @@
                                     <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Image provided by the user to the related post"/>
                                     {% endif %}
                                     <div class="image-flash">
-                                        <p class="author">Author: {{ post.author }}</p>
+                                        <p class="author">Author: <a class="profile-link" href="{% url 'profile' username=post.author %}">@{{ post.author }}</a></p>
                                     </div>
                                 </div>
                                 <a href="{% url 'post_detail' post.slug  %}" class="post-link">

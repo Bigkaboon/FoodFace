@@ -27,8 +27,9 @@ class PostForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'post-form-style'
+                self.fields[field].widget.attrs['class'] = 'post-form-style'
             self.fields[field].label = False
+            self.fields['featured_image'].widget.attrs['class'] = 'img-btn'
 
 class ProfileForm(forms.ModelForm):
     class Meta:

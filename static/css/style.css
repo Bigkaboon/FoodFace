@@ -264,6 +264,7 @@ h5 {
 
 .add-post-head {
     text-align: center;
+    padding-top: 2rem;
 }
 
 .btn-submit {
@@ -322,7 +323,25 @@ h5 {
 }
 
 .add-post-bg {
-    background-color: #ff9a89
+    background-color: rgba(255, 154, 152, 0.5);
+    padding-bottom: 2rem;
+}
+.profile-link {
+    text-decoration: none;
+    color: white;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+    color: lightblue;
+}
+
+hr {
+    color: white;
+    min-height: 0.3rem;
+    max-width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -431,6 +450,12 @@ h5 {
     border-radius: 15px;
 }
 
+.img-btn {
+    margin-top: 2rem;
+}
+
+
+
 .img-width {
     width: 100%;
 }
@@ -514,7 +539,9 @@ h5 {
         display: none;
     }
 
-
+    .btn-submit {
+        margin-left: 4.5rem;
+    }
 }
 
 @media screen and (min-width: 768px){
