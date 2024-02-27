@@ -295,6 +295,7 @@ h5 {
     background-color: #FF9A98;
     border: 1px solid black;
     border-radius: 5px;
+    padding: .25rem;
 }
 
 .comment-bg {
@@ -314,6 +315,10 @@ h5 {
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 0.5rem;
+}
+
+.post-edit-delete>a>i {
+    padding: 0.5rem;
 }
 
 .add-post-bg {
@@ -430,6 +435,10 @@ h5 {
     width: 100%;
 }
 
+.post-form-style {
+    margin-top: 2rem;
+}
+
 @media screen and (min-width: 390px) {
     #post-feed {
         min-height: 90vh;
@@ -504,6 +513,8 @@ h5 {
     .navbar-text {
         display: none;
     }
+
+
 }
 
 @media screen and (min-width: 768px){
