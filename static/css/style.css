@@ -140,7 +140,7 @@ p > input {
 }
 
 .pagination {
-    background-color: rgba(255, 154, 152, 0.);
+    background-color: rgba(255, 154, 152, 0.1);
     margin-bottom: 0;
     padding: 2rem;
 }
@@ -203,7 +203,6 @@ p > input {
 .center-profile {
     display: grid;
     place-items: center;
-    justify-content: baseline;
 }
 .masthead-text {
     background-color: #ff8686;
