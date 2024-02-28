@@ -34,13 +34,22 @@ This is the part of FoodFace that makes it possible for the users to post their 
 ---
 * Authentication - The user is able to register for an account that they can log in to and make the other features possible to use.
 
+![Authentication image](media/readme-images/authentication.png)
+
 * Posts - Once Authenticated the user can create posts and afterwords edit and delete them if wanted. Without authentication the user can only display other users posts.
+
+![Posts image](media/readme-images/add_post.png)
 
 * Comments - Much alike with posts a unauthenticated user can only read comments but once loged in to an account the user can comment on posts, edit and delete them.
 
+![comments image](media/readme-images/comments.png)
+
 * Likes - Likes are displayed right under the post both in the post feed and while viewing a specific post. As usual the user can only like a post once loged in to an account.
+![Likes image](media/readme-images/likes.png)
 
 * Profile - Once the user is creating a account their profile is created, this is a important part for future features like DM's and adding other users as friends. User can at the moment edit it in the way they like and save it.
+
+![Profile image](media/readme-images/profile.png)
 
 ## Testing
 
@@ -55,6 +64,11 @@ This is the part of FoodFace that makes it possible for the users to post their 
 * Add/follow Users - I wanted users to have the ability to add other users so that they can have a seperate feed that displayes their respective posts and then change the "default" feed to a mix of popular and latest releases. This also connect to the next feature to implement.
   
 * DM's - Once users are friends I want them to be able to communicate, this open up doors for the users and takes the site to the next level and can create other possible purposes of using the site for the users.
+
+## Bugs
+
+* Trying to view a post unauthenticated will result in a 500 error - The error is left since it's caused by linking to profiles in the comments and I needed ways to navigate to users profiles.
+
 
 
 ## Process
