@@ -90,7 +90,7 @@
           <p class="font-weight-bold">
             <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
             <!-- <a class="profile-link" href="{% url 'profile' username=post.author %}">@{{ comment.name }}</a -->
-            <a class="profile-link" href="{% url 'profile' comment.name %}">@{{ comment.name }}</a>
+            <a class="profile-link" href="{% url 'profile' username=comment.name %}">@{{ comment.name }}</a>
             <span class="text-muted font-weight-normal">
               <!-- The comment's created date goes here -->
               {{ comment.created_on }}

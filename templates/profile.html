@@ -13,7 +13,7 @@
     <p class="white-text">{{ profile.bio }}</p>
   </div>
 
-  {% if user.is_authenticated %}
+  {% if user.is_authenticated and user.username == user %}
   
     <a href="{% url 'update_profile' username=user.username %}" class="edit-profile-btn" style="text-decoration: none;color: white;">Edit Profile</a>
   

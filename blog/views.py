@@ -20,6 +20,7 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 3
 
+
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -29,7 +30,7 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id = self.request.user.id).exists():
             liked = True
-
+        
         return render(
             request,
             "post_detail.html",
@@ -40,7 +41,7 @@ class PostDetail(View):
                 "liked": liked,
                 "comment_form": CommentForm(),
             },
-           
+        
         )
     
     def post(self, request, slug, *args, **kwargs):
@@ -72,6 +73,7 @@ class PostDetail(View):
                 "commented": True,
                 "liked": liked,
                 "comment_form": CommentForm(),
+                "username": username,
             },
            
         )
