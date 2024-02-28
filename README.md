@@ -4,10 +4,10 @@ FoodFace is originally a business idea that gathers recipes from around the worl
 
 This is the part of FoodFace that makes it possible for the users to post their food experiences and share them with others and contribute to the library.
 
-# Important 
- * During the validation/documentation process the layout of the website got majorly changed. Due to the lack of student support during Christmas I needed to do the validation as late as I did which resulted in less time fixing the problems that occured once debugged.
- * I expect this project to fail and mainly submit it in time so that I can fix the all the problem's once assesed after the 5th project is complete, I just now found the commits and localized them so that I can fix the layout later on when it's time. I also looked at the deployed version and for some reason isnt that working either.
- * Just to be extra clear, the Layout changed once debugging the python files which I then now (the day of submission) tried to fix to the absolute last minuite.
+## Worth Mentioning
+* Not a Food blog - During the process of the project it did not become very clear that the purpose of the site is to contribute with creative recipes and that FoodFace is especially created for that purpose. So for this project you can now create what ever post you would like. I would with more time change the style and add features in order to maintain the main idea with the project.
+---
+
 
 ## UX
 ---
@@ -75,6 +75,12 @@ This is the part of FoodFace that makes it possible for the users to post their 
 
 
 * Documentation and Testing - Once the design was as done as I had time for I started the documentation and testing.
+
+* Failed Validation - The first time I validated the code it got all messed up of a unknown mistake I did trying to fix the errors from the python validator. What I did to fix this was to get back to the latest commit before I started validating and than used the following commands in the CLI in order to validate all python file automatically:
+
+  *  pip install --upgrade autopep8
+  * autopep8 --in-place --aggressive --aggressive *.py
+
 
 
 ## Results-
