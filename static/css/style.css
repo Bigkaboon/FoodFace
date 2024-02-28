@@ -373,6 +373,8 @@ hr {
     margin-right: auto;
 }
 
+
+
 #div_id_featured_image {
     margin-left: auto;
     margin-right: auto;
@@ -393,7 +395,6 @@ hr {
     margin-top: 1rem;
     margin-left: 2rem;
 }
-
 
 .edit-profile-bg {
     margin-left: auto;
@@ -540,6 +541,15 @@ hr {
     .btn-submit {
         margin-left: 4.5rem;
     }
+
+    #login-bg {
+        margin-bottom: 3rem;
+    }
+
+    .fa-heart {
+        margin-right: 3rem;
+    }
+    
 }
 
 @media screen and (min-width: 768px){
@@ -554,6 +564,8 @@ hr {
         min-height: 15vh;
         border-radius: 15px;
     }
+
+
     
     .bio-bg>p {
         font-weight: 500;
