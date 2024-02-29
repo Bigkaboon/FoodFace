@@ -137,6 +137,10 @@ p > input {
 .post-link:hover,
 .page-link {
     color: #E84610;
+    border-radius: 15px;
+    border: 1px solid #FF3632;
+
+
 }
 
 .pagination {
@@ -146,8 +150,8 @@ p > input {
 }
 
 .post-title {
-    margin-top: 20%;
     margin-left: 5%;
+    margin-bottom: 1rem;
 }
 
 .post-subtitle {
@@ -459,6 +463,10 @@ hr {
     width: 100%;
 }
 
+.pagination > li {
+    border-radius: 15%;
+}
+
 .post-form-style {
     margin-top: 2rem;
 }
@@ -530,6 +538,8 @@ hr {
     .info-text {
         max-width: 40vw;
     }
+
+    
 
 }
 
