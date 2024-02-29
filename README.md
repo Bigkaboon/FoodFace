@@ -6,6 +6,8 @@ This is the part of FoodFace that makes it possible for the users to post their 
 
 ## Worth Mentioning
 * Not a Food blog - During the process of the project it did not become very clear that the purpose of the site is to contribute with creative recipes and that FoodFace is especially created for that purpose. So for this project you can now create what ever post you would like. I would with more time change the style and add features in order to maintain the main idea with the project.
+
+* Post Content - The content from the posts are generated from [ChatGPT](https://chat.openai.com/) with simple prompts containing the topics.
 ---
 
 
